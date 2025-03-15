@@ -17,3 +17,11 @@ body{
     background-color: #fcfbfc;
     overflow-x: hidd en;
 }
+
+.input-box {
+    @apply w-[450px] flex justify-between gap-3 text-sm text-black bg-slate-100 rounded px-4 py-3 mb-4 mt-3 border border-slate-200 outline-none ;
+}
+
+.btn-primary {
+    @apply w-[450px] mt-6 bg-blue-400 border  text-white px-4 py-3 rounded hover:bg-white hover:border border-blue-400 hover:text-blue-400 transition-colors duration-300;
+}
