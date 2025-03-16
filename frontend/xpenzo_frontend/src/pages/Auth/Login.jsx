@@ -31,7 +31,7 @@ const Login = () => {
     //Login API call
   }
   return (
-    <AuthLayout>
+    <AuthLayout pageType="login">
       <div className='lg:w-[70%] h-3/4 md:h-full flex flex-col justify-center mx-10 '>
         <h3 className='text-2xl font-semibold text-black mb-2'> Welcome Back</h3>
         <p className='text-m text-slate-900 mt-[5px] mb-6'> To keep connected with us <br /> please login with your professional informations</p>
@@ -50,7 +50,7 @@ const Login = () => {
             onChange={({target}) => setPassword(target.value)}
             label='Password'
             type='password'
-            placeholder='Min 8 characters'
+            placeholder='Enter your password'
           />
 
           {error && <p className='text-red-500 text-sm pb-2.5'>{error}</p>}

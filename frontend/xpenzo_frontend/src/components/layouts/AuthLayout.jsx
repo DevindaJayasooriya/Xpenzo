@@ -1,7 +1,10 @@
 import React from 'react'
 import loginimg from "../../assets/loginImg.png";
+import signupimg from "../../assets/signup.png";
 
-const AuthLayout = ({children}) => {
+const AuthLayout = ({ children, pageType = "login" }) => {
+    const displayImage = pageType === "signup" ? signupimg : loginimg;
+
   return (
     <div className='flex'>
         <div className='w-screen h-screen md:w-[60vw] px-12 pt-18 pb-12'>
@@ -10,7 +13,7 @@ const AuthLayout = ({children}) => {
         </div>
 
         <div className='hidden md:flex md:w-[80vw] h-screen'>
-            <img src={loginimg} alt="" />
+            <img src={displayImage} alt="" />
         </div>
 
     </div>
