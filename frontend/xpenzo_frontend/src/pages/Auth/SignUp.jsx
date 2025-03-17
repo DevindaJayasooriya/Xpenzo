@@ -16,7 +16,29 @@ const SignUp = () => {
   const navigate = useNavigate();
 
   //handle signup
-  const handleSignUp = async (e) => {};
+  const handleSignUp = async (e) => {
+      e.preventDefault();
+
+      let profilePicUrl = "";
+
+      if(!fullName){
+        setError('Please enter your full name');
+        return;
+      }
+      if(!validateEmail(email)){
+        setError('Please enter a valid email');
+        return;
+      }
+      if(!password && password.length < 8){
+        setError('Please enter a password');
+        return;
+      }
+      setError("");
+
+      //Signup API call
+      
+  };
+
   return (
     <AuthLayout pageType="signup">
       <div className="lg:w-[70%] h-3/4 md:h-full flex flex-col justify-center mx-10 ">
