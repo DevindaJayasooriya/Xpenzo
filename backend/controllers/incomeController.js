@@ -18,7 +18,7 @@ module.exports.addIncome = async (req,res) =>{
             icon,
             source,
             amount,
-            date:new Date(date),
+            date
         });
 
         const income = await newIncome.save();
