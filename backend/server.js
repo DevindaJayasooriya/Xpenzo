@@ -4,6 +4,7 @@ require ('dotenv').config();
  const path = require('path');
 const connectedDB = require('./config/dbConfig');
 const authRoutes = require('./routes/authRoutes');
+const incomeRoutes = require('./routes/incomeRoutes');
 
  const app = express();
 
@@ -20,6 +21,10 @@ app.use(express.json());
 connectedDB();
 
 app.use('/api/v1/auth', authRoutes);
+app.use('/api/v1/income', incomeRoutes);
+
+//serve uploads folder
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
