@@ -2,10 +2,8 @@ const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 
 //generate token
-const generateToken = (id) =>{
-    return jwt.sign({id}, process.env.JWT_SECRET, {
-        expiresIn: '1h'
-    });
+const generateToken = (id) => {
+    return jwt.sign({ id }, process.env.JWT_SECRET_KEY, { expiresIn: "30d" });  
 };
 
 //register user
@@ -30,9 +28,8 @@ module.exports.registerUser = async (req,res) =>{
             profileImageUrl
         })
         res.status(201).json({
-            id: user._id,
-            fullName: user.fullName,
-            email: user.email,
+            id: user._id, 
+            user,
             token: generateToken(user._id)
         }); 
     } catch (error) {
